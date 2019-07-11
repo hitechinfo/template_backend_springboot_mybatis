@@ -15,35 +15,6 @@ get 호출 확인용
 request : get  
 reponse : 200, Hello World!-MainController-main  
 
-## /auth
-
-AuthTemplate  
-post 호출, JPA save 확인용  
-
-request : post  
-body 내용 :  
-{  
-"TEMPLATE_USER_ID" : "authAdmin",  
-"TEMPLATE_USER_PW" : "authAdmin",  
-"TEMPLATE_USER_TYPE" : "authAdmin"  
-}  
-response :   
-"username": "authAdmin",  
-"authorities":[  
-{  
-"authority": "authAdmin"  
-}  
-],    
-
-## /datajpa
-
-JPATemplate  
-post 호출, JPA find 확인용  
-
-request :   
-response :   
-
-console에 Hello World!-getTemplateJpa-getAuthUserType>>>>>>>>admin 메세지 확인
 
 ## /data
 
