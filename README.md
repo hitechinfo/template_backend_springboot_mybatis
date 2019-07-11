@@ -35,7 +35,7 @@ MainController.java 함수를 사용
   * MyBatisTemplate  
   * properties MariaDB로 설정, H2Runner run 메소드 내용 주석처리 후 테스트  
   * post 호출, MariaDB, Mybatis 확인용  
-  * request : post  
+  * request : get  
   * response :  
   ```
   {  
