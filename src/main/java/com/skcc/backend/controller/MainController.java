@@ -17,13 +17,13 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.skcc.backend.common.security.CustomUserDetailsService;
 import com.skcc.backend.service.MainService;
 
 @RestController
@@ -31,10 +31,6 @@ public class MainController {
 
 	@Autowired
 	MainService mainService;
-
-
-	@Autowired
-	CustomUserDetailsService customUserDetailsService;
 
 	@Autowired
 	AuthenticationManager authenticationManager;
@@ -44,7 +40,7 @@ public class MainController {
 	/**
 	*MainTemplate
 	*
-	*@return
+	* @return
 	*/
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public ResponseEntity<String> getHome() {
@@ -56,36 +52,12 @@ public class MainController {
 	}
 
 	/**
-	* AuthTemplate
-	*
-	* @param req
-	 * @param authentication 
-	* @return UserDetails
-	*/
-	@RequestMapping("/auth")
-	public UserDetails authTemplate(@RequestBody Map<String, Object> req, HttpSession session){
-
-		logger.info("Hello World!-authTemplate{}_jpa", req);
-
-		customUserDetailsService.createAccount(req.get("TEMPLATE_USER_ID").toString(), req.get("TEMPLATE_USER_PW").toString(),req.get("TEMPLATE_USER_TYPE").toString());
-
-		UserDetails auth = customUserDetailsService.loadUserByUsername(req.get("TEMPLATE_USER_ID").toString());
-
-		String authUserId = req.get("TEMPLATE_USER_ID").toString();
-		String authUserPw = req.get("TEMPLATE_USER_PW").toString();
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authUserId, authUserPw));
-		session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY, SecurityContextHolder.getContext());
-
-		return auth;
-	}
-
-	/**
 	* MyBatisTemplate
 	*
 	* @return Map<String, Object>
 	* @throws Exception
 	*/
-	@RequestMapping("/data")
+	@RequestMapping(value = "/data", method = RequestMethod.GET)
 	@ResponseBody
 	public Map<String, Object> getTemplate() throws Exception{
 		logger.info("Hello World!-getTemplate-data-req_MariaDB");
@@ -95,26 +67,15 @@ public class MainController {
 
 		try {
 			resultMap.put("rows", resultIt);
-			logger.info("Hello World!-getTemplate-data-returnMap{}", resultMap);
+			logger.info("Hello World!-getTemplate-data-returnMap", resultMap);
 		} catch (Exception e) {
-			logger.error(">>>>>>>>>>>>>>>>>>MyBatis Test Error Con");
-			throw new Exception("MyBatis Test Error Con");
+			logger.error("=======> ERROR ON CONTROLLER");
+			throw new Exception("ERROR ON CONTROLLER");
 		}
 
 		return resultMap;
 	}
 
-	/**
-	* JPATemplate
-	*
-	*@return void
-	*@throws Exception
-	*/
-	@RequestMapping("/datajpa")
-	public void getTemplateJpa() throws Exception {
-		mainService.getTemplateJpa();
-	}
-	
 	/**
 	* ExceptionTemplate
 	*

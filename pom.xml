@@ -61,6 +61,15 @@
         <!-- mariaDb -->
 
 		<dependency>
+			<groupId>org.projectlombok</groupId> 
+			<artifactId>lombok</artifactId> 
+			<scope>provided</scope> 
+		</dependency>
+
+
+
+
+		<dependency>
 		    <groupId>org.javassist</groupId>
 		    <artifactId>javassist</artifactId>
 		    <version>3.23.1-GA</version>
@@ -95,7 +104,7 @@
 			<scope>runtime</scope>
 		</dependency>
 		
-		<dependency>
+ 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
