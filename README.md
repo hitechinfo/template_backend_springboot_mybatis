@@ -5,6 +5,11 @@ Springboot, Spring Security, Mybatis 기반 템플릿
 * Git 설치
 * Java JDK 설치
 * STS 설치
+* lombok 설치
+  * 다운로드: https://projectlombok.org/download (압축 풀지 않습니다.)
+  * lombok jar 파일이 다운로드된 폴더 위치에서 cmd 창을 엽니다. 
+  * 명령어 입력: `java -jar lombok.jar` (lombok.jar에 다운받은 파일의 이름을 넣습니다)
+  * install 창이 뜨면 설치를 진행합니다.
 
 ## 프로젝트 실행하기
 ### 소스 다운로드
