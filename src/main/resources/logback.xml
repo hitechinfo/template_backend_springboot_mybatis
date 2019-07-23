@@ -38,7 +38,7 @@
 	<logger name="jdbc.connection" level="OFF"/>
 		
 	<springProfile name="dev">
-		<root level="DEBUG">
+		<root level="INFO">
 			<appender-ref ref="consoleAppender" />
 			<appender-ref ref="fileAppender" />
 		</root>

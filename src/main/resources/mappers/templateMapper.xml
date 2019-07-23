@@ -2,15 +2,48 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="template">
 
-	<!--Template Mapper -->
-	
 	<resultMap type="java.util.Map" id="templateMap">
 		<result column="CAPABILITY" property="capa"/>
 	</resultMap>
+
 	<select id="daoQueryId" resultMap="templateMap" parameterType="java.util.HashMap">
 		SELECT *
 		FROM template.sv_common_codes
 	</select>
+	
+	<insert id="daoInsert" parameterType="com.skcc.backend.model.CommonCodesDto">
+		Insert into 
+		template.sv_common_codes (
+			group_id,
+			code_name,
+			code_value,
+			code_order,
+			create_datetime,
+			create_user_id,
+			update_datetime,
+			update_user_id
+		) values (
+			'${groupId}',
+			'${codeName}',
+			'${codeValue}',
+			${codeOrder},
+			CURRENT_TIMESTAMP(),
+			'${createUserId}',
+			CURRENT_TIMESTAMP(),
+			'${updateUserId}'
+		)
+		
+	</insert>
+	
+	<update id="daoUpdate" parameterType="com.skcc.backend.model.CommonCodesDto">
+		update template.sv_common_codes 
+			set code_value = '${codeValue}',
+			    update_datetime = CURRENT_TIMESTAMP(),
+			    update_user_id = '${updateUserId}'
+		where group_id = '${groupId}'
+		and code_name = '${codeName}'
+		
+	</update>
 
 <!-- 	<resultMap type="java.util.Map" id="templateMapH2">
 		<result column="NAME" property="name"/>
