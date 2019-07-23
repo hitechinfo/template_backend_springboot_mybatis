@@ -34,19 +34,19 @@ MainController.java 함수를 사용
   * reponse : 200, Hello World!-MainController-main  
 
 * URL : `/dataget`
-  * properties MariaDB dev로 설정 
+  * properties : MariaDB dev로 설정 
   * request : get  
   * Common Code select
 
   
 * URL : `/datapost`
-  * properties MariaDB dev로 설정 
+  * properties : MariaDB dev로 설정 
   * request : post  
   * Common Code insert
 
   
 * URL : `/dataput`
-  * properties MariaDB dev로 설정 
+  * properties : MariaDB dev로 설정 
   * request : put  
   * Common Code update
 
