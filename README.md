@@ -25,7 +25,7 @@ Springboot, Spring Security, Mybatis 기반 템플릿
 MainController.java 함수를 사용
 
 ### Sample REST API 가이드
-* table은 local template db의 sv_common_codes 
+* table은 local template db의 `sv_common_codes`를 사용  
 
 * URL : `/main`
   * MainTemplate  
