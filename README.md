@@ -25,27 +25,28 @@ Springboot, Spring Security, Mybatis 기반 템플릿
 MainController.java 함수를 사용
 
 ### Sample REST API 가이드
+* table은 local template db의 sv_common_codes 
+
 * URL : `/main`
   * MainTemplate  
   * get 호출 확인용
   * request : get  
   * reponse : 200, Hello World!-MainController-main  
 
-* URL : `/data`
-  * MyBatisTemplate  
-  * properties MariaDB로 설정, H2Runner run 메소드 내용 주석처리 후 테스트  
-  * post 호출, MariaDB, Mybatis 확인용  
+* URL : `/dataget`
+  * properties MariaDB dev로 설정 
   * request : get  
-  * response :  
-  ```
-  {  
-    "rows":[  
-      {  
-        "TEST": "SUCCESS"  
-      }  
-    ]  
-  }  
-  ```
+
+  
+ * URL : `/datapost`
+  * properties MariaDB dev로 설정 
+  * request : post  
+
+  
+ * URL : `/dataput`
+  * properties MariaDB dev로 설정 
+  * request : put  
+
 
 * URL : `/exception`
   * ExceptionTemplate  
