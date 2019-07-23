@@ -25,7 +25,7 @@ Springboot, Spring Security, Mybatis 기반 템플릿
 MainController.java 함수를 사용
 
 ### Sample REST API 가이드
-* table은 local template db의 `sv_common_codes`를 사용  
+* table은 local `template` DB의 `sv_common_codes`를 사용  
 
 * URL : `/main`
   * MainTemplate  
@@ -36,16 +36,19 @@ MainController.java 함수를 사용
 * URL : `/dataget`
   * properties MariaDB dev로 설정 
   * request : get  
+  * Common Code select
 
   
  * URL : `/datapost`
   * properties MariaDB dev로 설정 
   * request : post  
+  * Common Code insert
 
   
  * URL : `/dataput`
   * properties MariaDB dev로 설정 
   * request : put  
+  * Common Code put
 
 
 * URL : `/exception`
