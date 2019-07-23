@@ -18,7 +18,7 @@ Springboot, Spring Security, Mybatis 기반 템플릿
   `git clone https://github.com/hitechinfo/template_backend_springboot_mybatis.git`
   * Tip) Git bash를 사용하셔도 좋지만 sourcetree 등과 같은 Git Client Tool을 사용하시면 소스를 관리하기 편리합니다.   
 ### 서버 기동
-* Application.java - 우클릭 - Spring Boot App
+* Application.java - 우클릭 -  - Spring Boot App
 
 
 ### 사용방법 및 기능 설명
