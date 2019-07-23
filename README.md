@@ -22,7 +22,7 @@ Springboot, Spring Security, Mybatis 기반 템플릿
 
 
 ### 사용방법 및 기능 설명
-MainController.java 함수를 사용
+MainController.java 함수를 사용  
 rest url 추가 할때마다 common/security/SecurityConfig.java 파일의 configure function에 해당 url 추가 (authorized)
 
 ### Sample REST API 가이드
