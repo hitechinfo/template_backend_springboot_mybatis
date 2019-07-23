@@ -48,7 +48,7 @@ MainController.java 함수를 사용
 * URL : `/dataput`
   * properties MariaDB dev로 설정 
   * request : put  
-  * Common Code put
+  * Common Code update
 
 
 * URL : `/exception`
