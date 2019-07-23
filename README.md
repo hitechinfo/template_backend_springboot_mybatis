@@ -39,13 +39,13 @@ MainController.java 함수를 사용
   * Common Code select
 
   
- * URL : `/datapost`
+* URL : `/datapost`
   * properties MariaDB dev로 설정 
   * request : post  
   * Common Code insert
 
   
- * URL : `/dataput`
+* URL : `/dataput`
   * properties MariaDB dev로 설정 
   * request : put  
   * Common Code put
